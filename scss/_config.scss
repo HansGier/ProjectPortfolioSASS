@@ -1,0 +1,39 @@
+/*-----------MIXIN-----------*/
+
+@mixin transition-ease {
+    transition: all 0.5s ease-in-out;
+}
+
+@mixin align-all-center {
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin media-md{
+    @media screen and (min-width: 768px){
+        @content;
+    }
+}
+
+@mixin media-lg{
+    @media screen and (min-width: 1024px){
+        @content;
+    }
+}
+
+@mixin media-xl{
+    @media screen and (min-width: 1600px){
+        @content;
+    }
+}
+
+
+/*-----------FUNCTIONS-----------*/
+
+@function set-text-color($color){
+    @if (lightness($color) > 40%){
+        @return #000;
+    } @else{
+        @return #fff;
+    }
+}
